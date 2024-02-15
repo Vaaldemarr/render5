@@ -64,15 +64,13 @@ async def cmd_info(message: types.Message, started_at: str):
 
 
 async def main():
-
-
     # Регистрируем хэндлер cmd_test2 по команде /start
     dp.message.register(cmd_test2, Command("test2"))
 
     # Запускаем бота и пропускаем все накопленные входящие
     # Да, этот метод можно вызвать даже если у вас поллинг
     await bot.delete_webhook(drop_pending_updates=True)
-    # await dp.start_polling(bot, mylist=[1, 2, 3])
+    await dp.start_polling(bot, mylist=[1, 2, 3])
 
 
 if __name__ == "__main__":
